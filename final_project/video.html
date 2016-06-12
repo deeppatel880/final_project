@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Videos</title>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="animate.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="menu">
+		<h3>Menu</h3>
+		<ul>
+			<li><i class="fa fa-home fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.html">Home</a></li><br>
+			<li><i class="fa fa-youtube-play fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;<a href="video.html">Videos</a></li>
+		</ul>
+	</div>
+	<div id="body">
+	<i class="fa fa-bars fa-2x" aria-hidden="true" id="bars"></i>
+	<h1 id="header">Videos</h1>
+	<div id="videos_container">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/4AukNDrAjeM" frameborder="0" allowfullscreen></iframe><br><p>inside Codecademy</p><br><br><br><br><iframe width="560" height="315" src="https://www.youtube.com/embed/pvv4Ne99lZM" frameborder="0" allowfullscreen></iframe><br><p>Codecademy review</p>		
+	</div>
+<script type="text/javascript">
+	$("#bars").click(function(){
+		if (!$("#menu").hasClass('animated slideInLeft')) {
+			$("#menu").removeClass('animated slideOutLeft');
+			$("#menu").show().addClass('animated slideInLeft');
+			$("#bars").animate({marginLeft: "+=15%"});
+			setTimeout(function(){
+			$("#body #bars").removeClass();
+			$("#body #bars").addClass('fa fa-times fa-2x')
+		}, 200)
+			}else{
+			$("#menu").removeClass('animated slideInLeft');
+			$("#menu").addClass('animated slideOutLeft');
+			setTimeout(function(){
+			$("#bars").animate({marginLeft: "-=15%"});
+			$("#body #bars").removeClass();
+			$("#body #bars").addClass('fa fa-bars fa-2x')
+			}, 200)
+			}
+	})
+
+	$(document).ready(function(){
+		$("#menu ul li").hover(function(){
+			$(this).find("a").css("color","#FFF")
+		},function(){
+			$(this).find("a").css("color","#000")
+		})
+	})
+	</script>	
+</body>
+</html>
